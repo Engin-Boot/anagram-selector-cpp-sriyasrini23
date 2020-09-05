@@ -16,9 +16,14 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
 
 std::vector<std::string> Anagram::SelectAnagrams(
     const std::string& word,
-    const std::vector<std::string>& candidates) {
-    //Fill the correct implementation here
-    return candidates;
+    const std::vector<std::string>& candidates) 
+{
+    std::vector<std::string> result;
+    for (auto& it : candidates) {
+        if (Anagram::WordPairIsAnagram(word, it) == true)
+            result.push_back(it);
+    }
+    return result;
 }
 
 void Anagram::FormatString(std::string& str)
