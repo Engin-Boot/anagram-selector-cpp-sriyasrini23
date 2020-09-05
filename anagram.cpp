@@ -8,16 +8,14 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     int n1 = FormatString(str1);
     int n2 = FormatString(str2);
 
-    if (n1 == n2)
-    {
-        for (int i = 0; i < n1; i++)
+    if (n1 != n2)
+        return false;
+
+    for (int i = 0; i < n1; i++)
             if (str1[i] != str2[i])
                 return false;
 
-        return true;
-    }
-    else
-        return false;
+    return true;
 }
 
 std::vector<std::string> Anagram::SelectAnagrams(
