@@ -11,5 +11,5 @@ namespace Anagram
         const std::string& word,
         const std::vector<std::string>& candidates);
     
-    int FormatString(std::string& str);
+    void FormatString(std::string& str);
 } // namespace Anagram
