@@ -2,6 +2,8 @@
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
     
+    bool result = true;
+
     std::string str1 = word1;
     std::string str2 = word2;
 
@@ -9,13 +11,13 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     int n2 = FormatString(str2);
 
     if (n1 != n2)
-        return false;
+        result = false;;
 
     for (int i = 0; i < n1; i++)
-            if (str1[i] != str2[i])
-                return false;
+        if (str1[i] != str2[i])
+            result = false;
 
-    return true;
+    return result;;
 }
 
 std::vector<std::string> Anagram::SelectAnagrams(
