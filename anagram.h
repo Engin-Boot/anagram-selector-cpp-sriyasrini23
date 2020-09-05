@@ -1,5 +1,7 @@
 #include <string>
 #include <vector>
+#include <cctype>
+#include <algorithm>
 
 namespace Anagram
 {
@@ -8,4 +10,6 @@ namespace Anagram
     std::vector<std::string> SelectAnagrams(
         const std::string& word,
         const std::vector<std::string>& candidates);
+    
+    void FormatString(std::string& str);
 } // namespace Anagram

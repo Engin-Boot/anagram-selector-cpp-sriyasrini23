@@ -22,3 +22,4 @@ TEST_CASE("selects anagrams of a word") {
         {"stream", "something", "maters"});
     REQUIRE(selection == std::vector<std::string>{"stream", "maters"});
 }
+
