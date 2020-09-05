@@ -1,23 +1,17 @@
 #include "anagram.h"
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
-    
-    bool result = true;
 
     std::string str1 = word1;
     std::string str2 = word2;
 
-    int n1 = FormatString(str1);
-    int n2 = FormatString(str2);
+    FormatString(str1);
+    FormatString(str2);
 
-    if (n1 != n2)
-        result = false;;
-
-    for (int i = 0; i < n1; i++)
-        if (str1[i] != str2[i])
-            result = false;
-
-    return result;;
+    if (str1 == str2)
+        return true;
+    else
+        return false;
 }
 
 std::vector<std::string> Anagram::SelectAnagrams(
@@ -27,7 +21,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
     return candidates;
 }
 
-int Anagram::FormatString(std::string& str)
+void Anagram::FormatString(std::string& str)
 {
     int count = 0;
 
@@ -40,6 +34,4 @@ int Anagram::FormatString(std::string& str)
     str[count] = '\0';
     str = str.substr(0, count);
     std::sort(str.begin(), str.end());
-
-    return str.length();
 }
